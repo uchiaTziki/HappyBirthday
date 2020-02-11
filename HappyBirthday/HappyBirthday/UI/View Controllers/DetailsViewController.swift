@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: BaseViewController {
 
     //MARK: - Private variables
     private var viewModel: DetailsViewModel = DetailsViewModel()
@@ -25,6 +25,10 @@ class DetailsViewController: UIViewController {
         setupUI()
     }
     
+    override func imageReadyFromCameraOrLibrary(image: UIImage) {
+        viewModel.imageValueChanged(withNewValue: image)
+    }
+    
     //MARK: - Actions
     @IBAction private func showNextScreenTapped(_ sender: UIButton) {
         endEditing()
@@ -36,6 +40,7 @@ class DetailsViewController: UIViewController {
     
     @IBAction func addPhotoTapped(_ sender: UIButton) {
         endEditing()
+        showPhotoMethodPicker()
     }
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
@@ -57,6 +62,7 @@ class DetailsViewController: UIViewController {
     private func updateUI() {
         nameTextField.text = viewModel.nameCurrentValue
         birthdayTextField.text = viewModel.birthdayCurrentStringValue
+        personImageView.image = viewModel.babyImage
     }
     
     private func endEditing() {

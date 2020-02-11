@@ -13,11 +13,9 @@ import UIKit
     func detailsViewModelDataUpdated(_ viewModel: DetailsViewModel)
 }
 
-class DetailsViewModel: NSObject {
+class DetailsViewModel: BaseViewModel {
 
     //MARK: - Public variables
-    var nameCurrentValue: String? { return HBUserDefaults.babyName }
-    var birthdayCurrentValue: Date? { return HBUserDefaults.babyBirthdayDate }
     var birthdayCurrentStringValue: String? {
         guard let date = HBUserDefaults.babyBirthdayDate else { return nil }
         let formatter = DateFormatter()
@@ -28,6 +26,12 @@ class DetailsViewModel: NSObject {
         didSet {
             checkValidation()
         }
+    }
+    
+    //MARK: - Override functions
+    override func imageValueChanged(withNewValue value: UIImage) {
+        super.imageValueChanged(withNewValue: value)
+        delegate?.detailsViewModelDataUpdated(self)
     }
     
     //MARK: - Public functions

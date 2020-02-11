@@ -58,5 +58,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera permission so you can take photo of your cute baby and make better use of our application</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to you library to get pictures of your cute baby and make better use of our application</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
