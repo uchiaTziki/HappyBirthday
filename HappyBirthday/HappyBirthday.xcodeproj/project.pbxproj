@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		0F5600EE23F2C44A00807E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5600ED23F2C44A00807E07 /* AppDelegate.swift */; };
 		0F5600F023F2C44A00807E07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5600EF23F2C44A00807E07 /* SceneDelegate.swift */; };
-		0F5600F223F2C44A00807E07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5600F123F2C44A00807E07 /* ViewController.swift */; };
 		0F5600F523F2C44A00807E07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5600F323F2C44A00807E07 /* Main.storyboard */; };
 		0F5600F723F2C44C00807E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5600F623F2C44C00807E07 /* Assets.xcassets */; };
 		0F5600FA23F2C44C00807E07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5600F823F2C44C00807E07 /* LaunchScreen.storyboard */; };
+		0F56010423F2CAD500807E07 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56010323F2CAD500807E07 /* DetailsViewController.swift */; };
+		0F56010823F2CE2900807E07 /* HBUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56010723F2CE2900807E07 /* HBUserDefaults.swift */; };
+		0F56010B23F2D55D00807E07 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56010A23F2D55D00807E07 /* DetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F5600EA23F2C44A00807E07 /* HappyBirthday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBirthday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5600ED23F2C44A00807E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5600EF23F2C44A00807E07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0F5600F123F2C44A00807E07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F5600F423F2C44A00807E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F5600F623F2C44C00807E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F5600F923F2C44C00807E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F5600FB23F2C44C00807E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F56010323F2CAD500807E07 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		0F56010723F2CE2900807E07 /* HBUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBUserDefaults.swift; sourceTree = "<group>"; };
+		0F56010A23F2D55D00807E07 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,57 @@
 		0F5600EC23F2C44A00807E07 /* HappyBirthday */ = {
 			isa = PBXGroup;
 			children = (
+				0F56010523F2CDE400807E07 /* Non UI */,
+				0F56010123F2CAB500807E07 /* UI */,
 				0F5600ED23F2C44A00807E07 /* AppDelegate.swift */,
 				0F5600EF23F2C44A00807E07 /* SceneDelegate.swift */,
-				0F5600F123F2C44A00807E07 /* ViewController.swift */,
 				0F5600F323F2C44A00807E07 /* Main.storyboard */,
 				0F5600F623F2C44C00807E07 /* Assets.xcassets */,
 				0F5600F823F2C44C00807E07 /* LaunchScreen.storyboard */,
 				0F5600FB23F2C44C00807E07 /* Info.plist */,
 			);
 			path = HappyBirthday;
+			sourceTree = "<group>";
+		};
+		0F56010123F2CAB500807E07 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0F56010923F2D53000807E07 /* View Models */,
+				0F56010223F2CABC00807E07 /* View Controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0F56010223F2CABC00807E07 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F56010323F2CAD500807E07 /* DetailsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0F56010523F2CDE400807E07 /* Non UI */ = {
+			isa = PBXGroup;
+			children = (
+				0F56010623F2CDEE00807E07 /* User Defaults */,
+			);
+			path = "Non UI";
+			sourceTree = "<group>";
+		};
+		0F56010623F2CDEE00807E07 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				0F56010723F2CE2900807E07 /* HBUserDefaults.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		0F56010923F2D53000807E07 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F56010A23F2D55D00807E07 /* DetailsViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F5600F223F2C44A00807E07 /* ViewController.swift in Sources */,
+				0F56010823F2CE2900807E07 /* HBUserDefaults.swift in Sources */,
 				0F5600EE23F2C44A00807E07 /* AppDelegate.swift in Sources */,
+				0F56010B23F2D55D00807E07 /* DetailsViewModel.swift in Sources */,
 				0F5600F023F2C44A00807E07 /* SceneDelegate.swift in Sources */,
+				0F56010423F2CAD500807E07 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tzikiapplications.HappyBirthday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tzikiapplications.HappyBirthday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
