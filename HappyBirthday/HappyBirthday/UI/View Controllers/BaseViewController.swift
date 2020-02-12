@@ -128,7 +128,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, UINavigationContr
 
 //MARK: - DetailsViewModelDelegate
 extension BaseViewController: BaseViewModelDelegate {
-    func baseViewModelDataUpdated(_ viewModel: BaseViewModel) {
+    func baseViewModelDataUpdated(_ viewModel: BaseViewModel?) {
         updateUI()
     }
 }

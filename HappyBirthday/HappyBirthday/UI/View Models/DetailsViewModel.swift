@@ -36,7 +36,7 @@ class DetailsViewModel: BaseViewModel {
     
     func birthdayValueChanged(withNewValue value: Date?) {
         HBUserDefaults.babyBirthdayDate = value
-        delegate?.baseViewModelDataUpdated(self)
+        NotificationCenter.default.post(name: .baseViewModelShouldUpdateDataNotification, object: nil)
         checkValidation()
     }
     
