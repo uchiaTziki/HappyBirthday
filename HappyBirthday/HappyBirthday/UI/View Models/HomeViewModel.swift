@@ -74,4 +74,24 @@ class HomeViewModel: BaseViewModel {
     func cameraImage() -> UIImage {
         return UIImage(named: "hb_camera_\(variant.suffix())")!
     }
+    
+    func getNumberImageAndString() -> (UIImage?, String) {
+        let age = calculateAge()
+        let string = age.years > 0 ? "years old!" : "months old!"
+        let number = age.years > 0 ? age.years : age.months
+        return (UIImage(named: "hb_\(number)"), string.uppercased())
+    }
+    
+    //MARK: - Private functions
+    private func calculateAge() -> (years: Int, months: Int) {
+        guard let birthday: Date = birthdayCurrentValue else { return (0, 0) }
+        
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.month, .day], from: birthday, to: Date())
+        guard let months = components.month else {
+            return (0, 0)
+        }
+        
+        return (months / 12, months)
+    }
 }

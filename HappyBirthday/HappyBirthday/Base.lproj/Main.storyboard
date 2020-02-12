@@ -249,6 +249,8 @@
                         <outlet property="cameraButton" destination="fOc-wL-REc" id="GBX-Jw-ZyM"/>
                         <outlet property="logoImageView" destination="fbJ-ed-LsA" id="2Cz-sx-ibW"/>
                         <outlet property="mainImageView" destination="gvO-9c-Vwy" id="Mmj-7y-XyC"/>
+                        <outlet property="numberDescriptionLabel" destination="SBH-Jq-bkc" id="KJa-R0-qjj"/>
+                        <outlet property="numberImageView" destination="b58-ts-NzK" id="qlK-NS-vT6"/>
                         <outlet property="sharableView" destination="1up-Fk-kCi" id="SeJ-a8-7KN"/>
                         <outlet property="titleLabel" destination="3AR-8X-fbG" id="A12-Re-NBB"/>
                     </connections>

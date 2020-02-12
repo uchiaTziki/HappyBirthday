@@ -18,7 +18,9 @@ class MainViewController: BaseViewController {
     @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var sharableView: UIView!
     @IBOutlet private weak var logoImageView: UIImageView!
-
+    @IBOutlet private weak var numberImageView: UIImageView!
+    @IBOutlet private weak var numberDescriptionLabel: UILabel!
+    
     //MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,10 @@ class MainViewController: BaseViewController {
         mainImageView.layer.borderWidth = 5
         mainImageView.layer.borderColor = homeViewModel.darkColor().cgColor
         mainImageView.layer.cornerRadius = mainImageView.frame.size.width / 2
+        
+        let numbersData = homeViewModel.getNumberImageAndString()
+        numberImageView.image = numbersData.0
+        numberDescriptionLabel.text = numbersData.1
         
         switch homeViewModel.logoLocation() {
         case .left:
