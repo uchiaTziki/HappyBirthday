@@ -18,6 +18,8 @@
 		0F56010D23F3165300807E07 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56010C23F3165300807E07 /* BaseViewController.swift */; };
 		0F56010F23F3332600807E07 /* HBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56010E23F3332600807E07 /* HBConstants.swift */; };
 		0F56011123F333AE00807E07 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56011023F333AE00807E07 /* BaseViewModel.swift */; };
+		0F56011323F3394E00807E07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56011223F3394E00807E07 /* MainViewController.swift */; };
+		0F56011523F33A4F00807E07 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56011423F33A4F00807E07 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0F56010C23F3165300807E07 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0F56010E23F3332600807E07 /* HBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBConstants.swift; sourceTree = "<group>"; };
 		0F56011023F333AE00807E07 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		0F56011223F3394E00807E07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0F56011423F33A4F00807E07 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			children = (
 				0F56010323F2CAD500807E07 /* DetailsViewController.swift */,
 				0F56010C23F3165300807E07 /* BaseViewController.swift */,
+				0F56011223F3394E00807E07 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				0F56010A23F2D55D00807E07 /* DetailsViewModel.swift */,
 				0F56011023F333AE00807E07 /* BaseViewModel.swift */,
+				0F56011423F33A4F00807E07 /* HomeViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -196,9 +202,11 @@
 				0F56010823F2CE2900807E07 /* HBUserDefaults.swift in Sources */,
 				0F5600EE23F2C44A00807E07 /* AppDelegate.swift in Sources */,
 				0F56010B23F2D55D00807E07 /* DetailsViewModel.swift in Sources */,
+				0F56011523F33A4F00807E07 /* HomeViewModel.swift in Sources */,
 				0F5600F023F2C44A00807E07 /* SceneDelegate.swift in Sources */,
 				0F56010423F2CAD500807E07 /* DetailsViewController.swift in Sources */,
 				0F56011123F333AE00807E07 /* BaseViewModel.swift in Sources */,
+				0F56011323F3394E00807E07 /* MainViewController.swift in Sources */,
 				0F56010F23F3332600807E07 /* HBConstants.swift in Sources */,
 				0F56010D23F3165300807E07 /* BaseViewController.swift in Sources */,
 			);

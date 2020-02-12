@@ -12,4 +12,8 @@ struct HBConstants {
     struct Files {
         static let imageFileName: String = "babyImage.png"
     }
+    
+    struct UI {
+        static let defaultPadding: CGFloat = 20
+    }
 }

@@ -12,7 +12,15 @@ import Photos
 
 class BaseViewController: UIViewController {
 
+    //MARK: - Override functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    
     //MARK: - Internal functions
+    internal func setupUI() {}
+        
     internal func showPhotoMethodPicker() {
         let menuController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         menuController.addAction(UIAlertAction(title: "Take photo", style: .default) { [weak self] (action) in

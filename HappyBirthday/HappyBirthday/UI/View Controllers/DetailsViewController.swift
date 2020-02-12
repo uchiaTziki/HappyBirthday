@@ -22,18 +22,29 @@ class DetailsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        setupUI()
     }
     
-    override func imageReadyFromCameraOrLibrary(image: UIImage) {
-        viewModel.imageValueChanged(withNewValue: image)
-    }
-    
-    //MARK: - Actions
-    @IBAction private func showNextScreenTapped(_ sender: UIButton) {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         endEditing()
     }
     
+    internal override func imageReadyFromCameraOrLibrary(image: UIImage) {
+        viewModel.imageValueChanged(withNewValue: image)
+    }
+    
+    internal override func setupUI() {
+        personImageView.layer.cornerRadius = personImageView.frame.size.width / 2
+        personImageView.layer.borderColor = UIColor(named: "hb_red")!.cgColor
+        personImageView.layer.borderWidth = 1
+        
+        datePicker.maximumDate = Date()
+        
+        if let date = viewModel.birthdayCurrentValue { datePicker.date = date }
+        updateUI()
+    }
+    
+    //MARK: - Actions
     @IBAction private func nameValueChanged(_ sender: UITextField) {
         viewModel.nameValueChanged(withNewValue: sender.text)
     }
@@ -48,17 +59,6 @@ class DetailsViewController: BaseViewController {
     }
     
     //MARK: - Private functions
-    private func setupUI() {
-        personImageView.layer.cornerRadius = personImageView.frame.size.width / 2
-        personImageView.layer.borderColor = UIColor(named: "hb_red")!.cgColor
-        personImageView.layer.borderWidth = 1
-        
-        datePicker.maximumDate = Date()
-        
-        if let date = viewModel.birthdayCurrentValue { datePicker.date = date }
-        updateUI()
-    }
-    
     private func updateUI() {
         nameTextField.text = viewModel.nameCurrentValue
         birthdayTextField.text = viewModel.birthdayCurrentStringValue
