@@ -8,9 +8,14 @@
 
 import UIKit
 
+@objc protocol BaseViewModelDelegate {
+    func baseViewModelDataUpdated(_ viewModel: BaseViewModel)
+}
+
 class BaseViewModel: NSObject {
 
     //MARK: - Public variables
+    weak var delegate: BaseViewModelDelegate?
     var nameCurrentValue: String? { return HBUserDefaults.babyName }
     var birthdayCurrentValue: Date? { return HBUserDefaults.babyBirthdayDate }
     var babyImage: UIImage? {
@@ -26,5 +31,6 @@ class BaseViewModel: NSObject {
         guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let fileURL = url.appendingPathComponent(HBConstants.Files.imageFileName)
         try? value.pngData()?.write(to: fileURL, options: .atomic)
+        delegate?.baseViewModelDataUpdated(self)
     }
 }

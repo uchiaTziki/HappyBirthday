@@ -12,14 +12,25 @@ import Photos
 
 class BaseViewController: UIViewController {
 
+    //MARK: - Internal variables
+    internal var viewModel: BaseViewModel?
+    
     //MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = initViewModel()
+        viewModel?.delegate = self
         setupUI()
     }
     
     //MARK: - Internal functions
+    internal func initViewModel() -> BaseViewModel {
+        return BaseViewModel()
+    }
+    
     internal func setupUI() {}
+    
+    internal func updateUI() {}
         
     internal func showPhotoMethodPicker() {
         let menuController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -112,5 +123,12 @@ extension BaseViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - DetailsViewModelDelegate
+extension BaseViewController: BaseViewModelDelegate {
+    func baseViewModelDataUpdated(_ viewModel: BaseViewModel) {
+        updateUI()
     }
 }

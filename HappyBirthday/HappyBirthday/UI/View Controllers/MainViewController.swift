@@ -11,36 +11,36 @@ import UIKit
 class MainViewController: BaseViewController {
 
     //MARK: - Private variables
+    private var homeViewModel: HomeViewModel { return viewModel as! HomeViewModel }
     @IBOutlet private weak var cameraButton: UIButton!
     @IBOutlet private weak var mainImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var sharableView: UIView!
     @IBOutlet private weak var logoImageView: UIImageView!
-    private var viewModel: HomeViewModel = HomeViewModel()
-    
+
     //MARK: - Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     internal override func imageReadyFromCameraOrLibrary(image: UIImage) {
-        viewModel.imageValueChanged(withNewValue: image)
+        homeViewModel.imageValueChanged(withNewValue: image)
     }
     
     internal override func setupUI() {
         super.setupUI()
-        view.backgroundColor = viewModel.backgroundColor()
+        view.backgroundColor = homeViewModel.backgroundColor()
         sharableView.backgroundColor = view.backgroundColor
-        backgroundImageView.image = viewModel.backgroundImage()
-        titleLabel.text = viewModel.titleText()
-        cameraButton.setImage(viewModel.cameraImage(), for: .normal)
+        backgroundImageView.image = homeViewModel.backgroundImage()
+        titleLabel.text = homeViewModel.titleText()
+        cameraButton.setImage(homeViewModel.cameraImage(), for: .normal)
         
         mainImageView.layer.borderWidth = 5
-        mainImageView.layer.borderColor = viewModel.darkColor().cgColor
+        mainImageView.layer.borderColor = homeViewModel.darkColor().cgColor
         mainImageView.layer.cornerRadius = mainImageView.frame.size.width / 2
         
-        switch viewModel.logoLocation() {
+        switch homeViewModel.logoLocation() {
         case .left:
             NSLayoutConstraint.activate([logoImageView.leadingAnchor.constraint(equalTo: sharableView.leadingAnchor, constant: HBConstants.UI.defaultPadding)])
         case .right:
@@ -52,6 +52,14 @@ class MainViewController: BaseViewController {
         updateUI()
     }
     
+    internal override func initViewModel() -> BaseViewModel {
+        return HomeViewModel()
+    }
+    
+    override internal func updateUI() {
+        mainImageView.image = homeViewModel.babyImage
+    }
+    
     //MARK: - Action functions
     @IBAction private func cameraButtonTapped(_ sender: UIButton) {
         showPhotoMethodPicker()
@@ -59,10 +67,5 @@ class MainViewController: BaseViewController {
     
     @IBAction private func closeTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    //MARK: - Private functions
-    private func updateUI() {
-        mainImageView.image = viewModel.babyImage
     }
 }
