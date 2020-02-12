@@ -77,7 +77,15 @@ class MainViewModel: BaseViewModel {
     
     func getNumberImageAndString() -> (UIImage?, String) {
         let age = calculateAge()
-        let string = age.years > 0 ? "years old!" : "months old!"
+        
+        let string: String
+        if age.years > 0 {
+            string = age.years == 1 ? "year old!" : "years old!"
+        }
+        else {
+            string = age.months == 1 ? "month old!" : "months old!"
+        }
+        
         let number = age.years > 0 ? age.years : age.months
         return (UIImage(named: "hb_\(number)"), string.uppercased())
     }
