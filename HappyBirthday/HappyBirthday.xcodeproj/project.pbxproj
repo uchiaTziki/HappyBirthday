@@ -20,6 +20,7 @@
 		0F56011123F333AE00807E07 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56011023F333AE00807E07 /* BaseViewModel.swift */; };
 		0F56011323F3394E00807E07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56011223F3394E00807E07 /* MainViewController.swift */; };
 		0F56011523F33A4F00807E07 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56011423F33A4F00807E07 /* HomeViewModel.swift */; };
+		0FE37B8E23F497CF005A304D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE37B8D23F497CF005A304D /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0F56011023F333AE00807E07 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		0F56011223F3394E00807E07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0F56011423F33A4F00807E07 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0FE37B8D23F497CF005A304D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		0F56010523F2CDE400807E07 /* Non UI */ = {
 			isa = PBXGroup;
 			children = (
+				0FE37B8C23F497B6005A304D /* Extensions */,
 				0F56010E23F3332600807E07 /* HBConstants.swift */,
 				0F56010623F2CDEE00807E07 /* User Defaults */,
 			);
@@ -126,6 +129,14 @@
 				0F56011423F33A4F00807E07 /* HomeViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		0FE37B8C23F497B6005A304D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0FE37B8D23F497CF005A304D /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE37B8E23F497CF005A304D /* UIView+Extension.swift in Sources */,
 				0F56010823F2CE2900807E07 /* HBUserDefaults.swift in Sources */,
 				0F5600EE23F2C44A00807E07 /* AppDelegate.swift in Sources */,
 				0F56010B23F2D55D00807E07 /* DetailsViewModel.swift in Sources */,

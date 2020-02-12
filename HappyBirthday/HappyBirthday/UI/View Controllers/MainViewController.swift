@@ -67,6 +67,12 @@ class MainViewController: BaseViewController {
     }
     
     //MARK: - Action functions
+    @IBAction func shareTapped(_ sender: UIButton) {
+        let activityViewController = UIActivityViewController(activityItems: [sharableView.asImage()] , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
     @IBAction private func cameraButtonTapped(_ sender: UIButton) {
         showPhotoMethodPicker()
     }

@@ -49,7 +49,7 @@ class DetailsViewController: BaseViewController {
         personImageView.image = detailsViewModel.babyImage
     }
     
-    //MARK: - Actions
+    //MARK: - Actions    
     @IBAction private func nameValueChanged(_ sender: UITextField) {
         detailsViewModel.nameValueChanged(withNewValue: sender.text)
     }
