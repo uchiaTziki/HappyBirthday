@@ -105,6 +105,7 @@ class BaseViewController: UIViewController {
             let controller = UIImagePickerController()
             controller.delegate = self
             controller.sourceType = type
+            controller.allowsEditing = true
             self.present(controller, animated: true, completion: nil)
         }
     }
@@ -114,7 +115,7 @@ class BaseViewController: UIViewController {
 extension BaseViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[.originalImage] as? UIImage else {
+        guard let image = info[.editedImage] as? UIImage else {
             return
         }
         
