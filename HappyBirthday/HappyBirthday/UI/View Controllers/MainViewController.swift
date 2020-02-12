@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: BaseViewController {
 
     //MARK: - Private variables
-    private var homeViewModel: HomeViewModel { return viewModel as! HomeViewModel }
+    private var homeViewModel: MainViewModel { return viewModel as! MainViewModel }
     @IBOutlet private weak var cameraButton: UIButton!
     @IBOutlet private weak var mainImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -59,7 +59,7 @@ class MainViewController: BaseViewController {
     }
     
     internal override func initViewModel() -> BaseViewModel {
-        return HomeViewModel()
+        return MainViewModel()
     }
     
     override internal func updateUI() {

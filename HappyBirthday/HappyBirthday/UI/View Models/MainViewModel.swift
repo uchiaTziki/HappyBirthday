@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  MainViewModel.swift
 //  HappyBirthday
 //
 //  Created by Sion Sasson on 11/02/2020.
@@ -32,7 +32,7 @@ enum IconLocation: Int {
     case right = 2
 }
 
-class HomeViewModel: BaseViewModel {
+class MainViewModel: BaseViewModel {
 
     //MARK: - Override variables
     override var babyImage: UIImage? {
